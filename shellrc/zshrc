@@ -1,15 +1,15 @@
 # $HOME/.zshrc
 
 # load all files from .shellrc/zshrc.d
-if [ -d $HOME/.shellrc/zshrc.d ]; then
-	for file in $HOME/.shellrc/zshrc.d/*.zsh; do
+if [[ -d $HOME/.shellrc/zshrc.d ]]; then
+	for file ($HOME/.shellrc/zshrc.d/*.zsh(N)); do
 		source $file
 	done
 fi
 
 # load all files from .shellrc/rc.d
-if [-d $HOME/.shellrc/rc.d ]; then
-	for file in $HOME/.shellrc/rc.d/*.sh; do
+if [[-d $HOME/.shellrc/rc.d ]]; then
+	for file ($HOME/.shellrc/rc.d/*.sh(N)); do
 		source $file
 	done
 fi
