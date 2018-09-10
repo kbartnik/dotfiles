@@ -1,0 +1,28 @@
+# $HOME/.bashrc
+
+# quit if shell is non-interactive
+if [[ $- != *i* ]] ; then
+  return
+fi
+
+# load all files from ./shrllrc/bashrc.d
+if [ -d $HOME/.shellrc/bashrc.d ]; then
+    shopt -s nullglob
+
+    for file in $HOME/.shellrc/bashrc.d/*.bash; do
+        source $file
+    done
+
+    shopt -u nullglob
+fi
+
+# load all files from .shellrc/rc.d
+if [ -d $HOME/.shellrc/rc.d ]; then
+    shopt -s nullglob
+
+    for file in $HOME/.shellrc/rc.d/*.sh; do
+        source $file
+    done
+
+    shopt -u nullglob
+fi
