@@ -9,7 +9,8 @@ fi
 if [ -d $HOME/.shellrc/bashrc.d ]; then
     shopt -s nullglob
 
-    for file in $HOME/.shellrc/bashrc.d/*.bash; do
+    for file in $HOME/.shellrc/bashrc.d/*.bash | sort -g; do
+        echo $file
         source $file
     done
 
